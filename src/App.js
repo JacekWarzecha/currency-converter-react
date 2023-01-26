@@ -1,12 +1,15 @@
 import "./App.css";
-import Container from "./Container";
+// import Container from "./Container";
 import Form from "./Form";
+import FormCantor from "./FormCantor";
 
 function App() {
   return (
-    <Container>
+    <div className="container">
       <Form />
-    </Container>
+
+      <FormCantor />
+    </div>
   );
 }
 
