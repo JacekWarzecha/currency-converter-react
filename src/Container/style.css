@@ -1,0 +1,11 @@
+.container {
+    margin: 0 auto;
+    padding: 10px 25px 40px 25px;
+    /* background-image: url("../images/tloPomaranczowe2.png"); */
+    max-width: 900px;
+    overflow: auto;
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+    
+}
