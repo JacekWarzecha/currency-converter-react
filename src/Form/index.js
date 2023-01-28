@@ -15,6 +15,7 @@ const Form = () => {
   };
 
   let price = sharePrice * usdPrice;
+
   if (price < 0) {
     price = "tylko liczby dodatnie";
   }
