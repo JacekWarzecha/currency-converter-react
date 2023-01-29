@@ -2,7 +2,7 @@ import "./style.css";
 import { useState } from "react";
 
 const FormCantor = () => {
-  const [currency, setCurrency] = useState("");
+  let [currency, setCurrency] = useState("");
 
   const [amount, setAmount] = useState("");
 
@@ -10,21 +10,37 @@ const FormCantor = () => {
     setCurrency(target.value);
   };
 
+  switch (currency) {
+    case "USD":
+      currency = 4.35;
+      break;
+    case "CHF":
+      currency = 4.75;
+      break;
+    case "EUR":
+      currency = 4.7;
+  }
+
+  // if (currency === "USD") {
+  //   rate === 4.35;
+  // } else if (currency === "CHF") {
+  //   rate === 4.75;
+  // } else {
+  //   rate === 4.7;
+  // }
+
   const onAmountChange = ({ target }) => {
     setAmount(target.value);
   };
 
   const onFormSubmit = (event) => {
     event.preventDefault();
+    calculate(amount * currency);
   };
 
   let result;
 
-  const calculate = () => {
-    const USD = 3.3;
-    const EUR = 4.65;
-    const CHF = 4.7;
-  };
+  const calculate = (amount, currency) => amount * currency === result;
 
   return (
     <form onSubmit={onFormSubmit} className="js-form-cantor">
@@ -62,7 +78,10 @@ const FormCantor = () => {
         </p>
         <div className="flex">
           <p className="flex__item">
-            <button onClick={calculate} className="form__button">
+            <button
+              // onClick={calculate(amount * currency)}
+              className="form__button"
+            >
               Oblicz
             </button>
           </p>
