@@ -5,6 +5,8 @@ const Form10 = () => {
 
   const [usdPrice1, setUsdPrice1] = useState("");
 
+  const [{ result }, setResult] = useState("");
+
   const onSharePriceChange1 = ({ target }) => {
     setSharePrice1(target.value);
   };
@@ -13,19 +15,18 @@ const Form10 = () => {
     setUsdPrice1(target.value);
   };
 
-  let result;
-
   const onFormSubmit = (event) => {
     event.preventDefault();
-    console.log(result);
+    calculate();
+    console.log(calculate());
   };
 
-  const calculate = () => (result = sharePrice1 * usdPrice1);
+  const calculate = () => setResult(sharePrice1 * usdPrice1);
 
   return (
     <form onSubmit={onFormSubmit} className="form">
       <p>
-        <button onClick={() => calculate()}>Ile panie?</button>
+        <button>Ile panie?</button>
       </p>
       <p>
         Oblicz ile zapłacisz za jedną akcję w <strong>PLN</strong> w zależności
@@ -62,7 +63,7 @@ const Form10 = () => {
 
         <p className="form__paragraph form__paragraph--padding">
           Koszt jednej akcji wynosi:
-          <strong className="form__cost">{result}</strong>
+          <strong value={result} className="form__cost"></strong>
         </p>
       </fieldset>
     </form>
