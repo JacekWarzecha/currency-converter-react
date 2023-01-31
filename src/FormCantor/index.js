@@ -2,45 +2,37 @@ import "./style.css";
 import { useState } from "react";
 
 const FormCantor = () => {
-  let [currency, setCurrency] = useState("");
+  const currencies = [
+    { id: 0, name: "" },
+    { id: 1, name: "USD", rate: 4.35 },
+    { id: 2, name: "CHF", rate: 4.75 },
+    { id: 3, name: "EUR", rate: 4.7 },
+  ];
+
+  // const getRate = () => currencies.map(({ rate }) => rate);
+
+  const [currency, setCurrency] = useState("");
 
   const [amount, setAmount] = useState("");
+
+  const [result, setResult] = useState("");
+
+  // const currenciesMap = () => currencies.map(({ name }) => name);
 
   const onCurrencyChange = ({ target }) => {
     setCurrency(target.value);
   };
 
-  switch (currency) {
-    case "USD":
-      currency = 4.35;
-      break;
-    case "CHF":
-      currency = 4.75;
-      break;
-    case "EUR":
-      currency = 4.7;
-  }
-
-  // if (currency === "USD") {
-  //   rate === 4.35;
-  // } else if (currency === "CHF") {
-  //   rate === 4.75;
-  // } else {
-  //   rate === 4.7;
-  // }
-
   const onAmountChange = ({ target }) => {
     setAmount(target.value);
   };
 
+  const calculate = () => setResult((result) => (result = amount / currency));
+
   const onFormSubmit = (event) => {
     event.preventDefault();
-    calculate(amount * currency);
+    calculate();
   };
-
-  let result;
-
-  const calculate = (amount, currency) => amount * currency === result;
 
   return (
     <form onSubmit={onFormSubmit} className="js-form-cantor">
@@ -54,9 +46,11 @@ const FormCantor = () => {
               onChange={onCurrencyChange}
               className="js-currency form__field form__field--width"
             >
-              <option>USD</option>
-              <option>EUR</option>
-              <option>CHF</option>
+              {currencies.map((currency) => (
+                <option key={currency.id} value={currency.rate}>
+                  {currency.name}
+                </option>
+              ))}
             </select>
           </label>
         </p>
@@ -78,15 +72,13 @@ const FormCantor = () => {
         </p>
         <div className="flex">
           <p className="flex__item">
-            <button
-              // onClick={calculate(amount * currency)}
-              className="form__button"
-            >
-              Oblicz
-            </button>
+            <button className="form__button">Oblicz</button>
           </p>
           <p className="flex__item">
-            = <strong className="js-score form__cost">{result}</strong>
+            ={" "}
+            <strong value={result} className="js-score form__cost">
+              {result}
+            </strong>
           </p>
         </div>
       </fieldset>

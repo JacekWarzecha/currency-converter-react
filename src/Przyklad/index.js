@@ -5,7 +5,7 @@ const Form10 = () => {
 
   const [usdPrice1, setUsdPrice1] = useState("");
 
-  const [{ result }, setResult] = useState("");
+  const [result, setResult] = useState("");
 
   const onSharePriceChange1 = ({ target }) => {
     setSharePrice1(target.value);
@@ -14,14 +14,15 @@ const Form10 = () => {
   const onUsdPriceChange1 = ({ target }) => {
     setUsdPrice1(target.value);
   };
+  const calculate = () =>
+    setResult((result) => (result = sharePrice1 * usdPrice1));
 
   const onFormSubmit = (event) => {
     event.preventDefault();
     calculate();
-    console.log(calculate());
+    setSharePrice1("");
+    setUsdPrice1("");
   };
-
-  const calculate = () => setResult(sharePrice1 * usdPrice1);
 
   return (
     <form onSubmit={onFormSubmit} className="form">
@@ -63,7 +64,9 @@ const Form10 = () => {
 
         <p className="form__paragraph form__paragraph--padding">
           Koszt jednej akcji wynosi:
-          <strong value={result} className="form__cost"></strong>
+          <strong value={result} className="form__cost">
+            {result}
+          </strong>
         </p>
       </fieldset>
     </form>
