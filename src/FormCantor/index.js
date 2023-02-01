@@ -1,8 +1,6 @@
 import "./style.css";
 import React, { useState } from "react";
-import ReactDOM from "react-dom/client";
-// import Result from ".Result"; tutaj mi też wyskakiwał bład,
-// kiedy próbowałem resultRender wyrzucić do osobnego komponentu
+// import Result from ".Result"; tutaj
 
 const FormCantor = () => {
   const currencies = [
@@ -30,20 +28,7 @@ const FormCantor = () => {
 
   const onFormSubmit = (event) => {
     event.preventDefault();
-    calculate();
-    resultRender();
-  };
-
-  const resultRender = () => {
-    const resultReactElement = (
-      <p className="flex__item">
-        ={" "}
-        <strong value={result} className="js-score form__cost">
-          {result}
-        </strong>
-      </p>
-    );
-    ReactDOM.createRoot(resultReactElement, document.getElementById("result2"));
+    calculate(amount, currency);
   };
 
   return (
@@ -86,7 +71,9 @@ const FormCantor = () => {
           <p className="flex__item">
             <button className="form__button">Oblicz</button>
           </p>
-          <div id="result2"></div>
+          <p className="flex__item">
+            = <strong className="js-score form__cost">{result}</strong>
+          </p>
         </div>
       </fieldset>
     </form>
