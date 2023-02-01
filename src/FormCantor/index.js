@@ -1,5 +1,8 @@
 import "./style.css";
-import { useState } from "react";
+import React, { useState } from "react";
+import ReactDOM from "react-dom/client";
+// import Result from ".Result"; tutaj mi też wyskakiwał bład,
+// kiedy próbowałem resultRender wyrzucić do osobnego komponentu
 
 const FormCantor = () => {
   const currencies = [
@@ -9,15 +12,11 @@ const FormCantor = () => {
     { id: 3, name: "EUR", rate: 4.7 },
   ];
 
-  // const getRate = () => currencies.map(({ rate }) => rate);
-
   const [currency, setCurrency] = useState("");
 
   const [amount, setAmount] = useState("");
 
   const [result, setResult] = useState("");
-
-  // const currenciesMap = () => currencies.map(({ name }) => name);
 
   const onCurrencyChange = ({ target }) => {
     setCurrency(target.value);
@@ -32,6 +31,19 @@ const FormCantor = () => {
   const onFormSubmit = (event) => {
     event.preventDefault();
     calculate();
+    resultRender();
+  };
+
+  const resultRender = () => {
+    const resultReactElement = (
+      <p className="flex__item">
+        ={" "}
+        <strong value={result} className="js-score form__cost">
+          {result}
+        </strong>
+      </p>
+    );
+    ReactDOM.createRoot(resultReactElement, document.getElementById("result2"));
   };
 
   return (
@@ -74,12 +86,7 @@ const FormCantor = () => {
           <p className="flex__item">
             <button className="form__button">Oblicz</button>
           </p>
-          <p className="flex__item">
-            ={" "}
-            <strong value={result} className="js-score form__cost">
-              {result}
-            </strong>
-          </p>
+          <div id="result2"></div>
         </div>
       </fieldset>
     </form>
