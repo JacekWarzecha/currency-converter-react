@@ -56,7 +56,7 @@ const Form = () => {
         </div>
         <p className="form__paragraph form__paragraph--padding">
           Koszt jednej akcji wynosi:
-          <strong className="form__cost">{price}</strong>
+          <strong className="form__cost">{price.toFixed(2)}</strong>
         </p>
       </fieldset>
     </form>

@@ -14,7 +14,11 @@ const FormCantor = () => {
 
   const [amount, setAmount] = useState("");
 
-  const [result, setResult] = useState("");
+  const [result, setResult] = useState(0);
+
+  const [amountChoice, setAmountChoice] = useState("");
+
+  const [currencyChoice, setCurrencyChoice] = useState("");
 
   const onCurrencyChange = ({ target }) => {
     setCurrency(target.value);
@@ -24,7 +28,11 @@ const FormCantor = () => {
     setAmount(target.value);
   };
 
-  const calculate = () => setResult((result) => (result = amount / currency));
+  const calculate = () => {
+    setResult((result) => (result = amount / currency));
+    setAmountChoice((amountSource) => (amountSource = amount));
+    setCurrencyChoice((currencyChoice) => (currencyChoice = currency));
+  };
 
   const onFormSubmit = (event) => {
     event.preventDefault();
@@ -72,7 +80,11 @@ const FormCantor = () => {
             <button className="form__button">Oblicz</button>
           </p>
           <p className="flex__item">
-            = <strong className="js-score form__cost">{result}</strong>
+            {amountChoice} PLN ={" "}
+            <strong className="js-score form__cost">
+              {result.toFixed(2)}{" "}
+            </strong>{" "}
+            {currencyChoice}
           </p>
         </div>
       </fieldset>
