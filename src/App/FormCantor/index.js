@@ -9,7 +9,7 @@ const FormCantor = ({ calculateResult, result }) => {
   //tutaj natomiast zauważyłem, że niby uzyliśmy
   //useState(currencies[0].short);
   //ale i tak wyświetla się sugerowana pełna nazwa, zamiast skrót...
-  //można też nie pisać nicza "currencies[0]" i działało by dalej tak samo
+  //można też nie pisać nic za "currencies[0]" i działało by dalej tak samo
 
   const [amount, setAmount] = useState("");
 
@@ -27,7 +27,7 @@ const FormCantor = ({ calculateResult, result }) => {
   };
 
   return (
-    <form onSubmit={onFormSubmit} className="js-form-cantor">
+    <form onSubmit={onFormSubmit}>
       <p>Zamień swoje złotówki na wybraną walutę</p>
       <fieldset className="form__fieldset">
         <p>
@@ -66,7 +66,6 @@ const FormCantor = ({ calculateResult, result }) => {
           <p>
             <button className="form__button">Oblicz</button>
           </p>
-
           <Result result={result} />
         </div>
       </fieldset>

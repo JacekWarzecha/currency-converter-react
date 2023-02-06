@@ -21,7 +21,6 @@ function App() {
   return (
     <div>
       <Form />
-
       <FormCantor result={result} calculateResult={calculateResult} />
     </div>
   );
