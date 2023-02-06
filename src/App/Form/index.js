@@ -1,9 +1,8 @@
 import "./style.css";
 import { useState } from "react";
 
-const Form = () => {
+export const Form = () => {
   const [sharePrice, setSharePrice] = useState("");
-
   const [usdPrice, setUsdPrice] = useState("");
 
   const onSharePriceChange = ({ target }) => {
@@ -48,7 +47,7 @@ const Form = () => {
                 value={usdPrice}
                 onChange={onUsdPriceChange}
                 type="number"
-                className="js-exchange form__field"
+                className="form__field"
                 required
               />
             </label>
@@ -62,5 +61,3 @@ const Form = () => {
     </form>
   );
 };
-
-export default Form;
