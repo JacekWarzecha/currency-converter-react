@@ -1,6 +1,6 @@
 import "./style.css";
 
-const Result = ({ result }) => (
+export const Result = ({ result }) => (
   <p className="result">
     {result !== undefined && (
       <>
@@ -18,5 +18,3 @@ const Result = ({ result }) => (
     )}
   </p>
 );
-
-export default Result;

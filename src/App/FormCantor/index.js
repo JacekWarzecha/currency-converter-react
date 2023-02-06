@@ -1,9 +1,9 @@
 import "./style.css";
 import React, { useState } from "react";
 import { currencies } from "../currencies";
-import Result from "./Result";
+import { Result } from "./Result";
 
-const FormCantor = ({ calculateResult, result }) => {
+export const FormCantor = ({ calculateResult, result }) => {
   const [currency, setCurrency] = useState(currencies[0].short);
 
   //tutaj natomiast zauważyłem, że niby uzyliśmy
@@ -72,4 +72,3 @@ const FormCantor = ({ calculateResult, result }) => {
     </form>
   );
 };
-export default FormCantor;

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Form from "./Form";
-import FormCantor from "./FormCantor";
+import { Form } from "./Form";
+import { FormCantor } from "./FormCantor";
 import { currencies } from "./currencies";
 
 function App() {
