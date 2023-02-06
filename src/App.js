@@ -2,7 +2,6 @@ import "./index.css";
 import Container from "./Container";
 import Form from "./Form";
 import FormCantor from "./FormCantor";
-import Przyklad from "./Przyklad";
 
 function App() {
   return (
@@ -10,8 +9,6 @@ function App() {
       <Form />
 
       <FormCantor />
-
-      <Przyklad />
     </Container>
   );
 }
