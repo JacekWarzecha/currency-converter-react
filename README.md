@@ -2,7 +2,13 @@
 
 ## To join this page click -> [link](https://jacekwarzecha.github.io/currency-converter-react/)
 
-### Webview:
+## So?
+
+In this converter you can quickly calculate how much PLN you will spend on foreign stocks.
+
+Also you can convert polish zloty to another currencies.
+
+## Webview:
 
 ![WebView](webView.png)
 
