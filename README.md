@@ -2,6 +2,10 @@
 
 ## To join this page click -> [link](https://jacekwarzecha.github.io/currency-converter-react/)
 
+### Webview:
+
+![WebView](webView.png)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
