@@ -4,22 +4,6 @@
     max-width: 550px;
 }
 
-.form__legend {
-    border: 1px solid currentColor;
-    border-radius: 8px;
-    background-color: rgb(244 232 97);
-    padding: 5px;
-}
-
-.form__cost {
-    background-color: rgb(244 232 97);
-    border: 1px solid currentColor;
-    border-radius: 8px;
-    padding: 7px 10px;
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
 .form__field {
     border-radius: 8px;
     width: 150px;
@@ -31,7 +15,7 @@
 }
 
 .form__field--width {
-    width: 80px;
+    width: 210px;
     border: 1px solid currentColor;
 }
 
@@ -55,13 +39,3 @@
     padding: 5px;
 }
 
-.flex {
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.flex__item {
-    padding: 0 5px;
-    flex-basis: 50%;
-}

@@ -1,24 +1,22 @@
 import "./style.css";
 import React, { useState } from "react";
-// import Result from ".Result"; tutaj
+import { currencies } from "../currencies";
+import Result from "./Result";
 
-const FormCantor = () => {
-  const currencies = [
-    { id: 0, name: "" },
-    { id: 1, name: "USD", rate: 4.35 },
-    { id: 2, name: "CHF", rate: 4.75 },
-    { id: 3, name: "EUR", rate: 4.7 },
-  ];
+const FormCantor = ({ calculateResult, result }) => {
+  const [currency, setCurrency] = useState(currencies[0].short);
 
-  const [currency, setCurrency] = useState("");
+  //tutaj natomiast zauważyłem, że niby uzyliśmy
+  //useState(currencies[0].short);
+  //ale i tak wyświetla się sugerowana pełna nazwa, zamiast skrót...
+  //można też nie pisać nicza "currencies[0]" i działało by dalej tak samo
 
   const [amount, setAmount] = useState("");
 
-  const [result, setResult] = useState(0);
-
-  const [amountChoice, setAmountChoice] = useState("");
-
-  const [currencyChoice, setCurrencyChoice] = useState("");
+  const onFormSubmit = (event) => {
+    event.preventDefault();
+    calculateResult(currency, amount);
+  };
 
   const onCurrencyChange = ({ target }) => {
     setCurrency(target.value);
@@ -26,17 +24,6 @@ const FormCantor = () => {
 
   const onAmountChange = ({ target }) => {
     setAmount(target.value);
-  };
-
-  const calculate = () => {
-    setResult((result) => (result = amount / currency));
-    setAmountChoice((amountSource) => (amountSource = amount));
-    setCurrencyChoice((currencyChoice) => (currencyChoice = currency));
-  };
-
-  const onFormSubmit = (event) => {
-    event.preventDefault();
-    calculate(amount, currency);
   };
 
   return (
@@ -49,10 +36,10 @@ const FormCantor = () => {
             <select
               value={currency}
               onChange={onCurrencyChange}
-              className="js-currency form__field form__field--width"
+              className="form__field form__field--width"
             >
               {currencies.map((currency) => (
-                <option key={currency.id} value={currency.rate}>
+                <option key={currency.short} value={currency.short}>
                   {currency.name}
                 </option>
               ))}
@@ -66,7 +53,7 @@ const FormCantor = () => {
               value={amount}
               onChange={onAmountChange}
               type="number"
-              className="js-amount form__field"
+              className="form__field"
               min="0.01"
               max="1000000000"
               step="any"
@@ -75,21 +62,15 @@ const FormCantor = () => {
           </label>
           PLN
         </p>
-        <div className="flex">
-          <p className="flex__item">
+        <div>
+          <p>
             <button className="form__button">Oblicz</button>
           </p>
-          <p className="flex__item">
-            {amountChoice} PLN ={" "}
-            <strong className="js-score form__cost">
-              {result.toFixed(2)}{" "}
-            </strong>{" "}
-            {currencyChoice}
-          </p>
+
+          <Result result={result} />
         </div>
       </fieldset>
     </form>
   );
 };
-
 export default FormCantor;

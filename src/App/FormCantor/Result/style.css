@@ -1,0 +1,17 @@
+.result {
+    text-align: center;
+}
+
+/* @media(max-width: 767px) {
+    .result{
+        padding: 15px;
+    }
+} */
+
+.result__targetAmount {
+    border: 1px solid currentColor;
+    border-radius: 8px;
+    padding: 4px 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
