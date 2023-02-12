@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Form } from "./Form";
 import { FormCantor } from "./FormCantor";
 import { currencies } from "./currencies";
+import { DateToday } from "./DateToday";
 
 function App() {
   const [result, setResult] = useState();
@@ -18,6 +19,7 @@ function App() {
 
   return (
     <div>
+      <DateToday />
       <Form />
       <FormCantor result={result} calculateResult={calculateResult} />
     </div>
