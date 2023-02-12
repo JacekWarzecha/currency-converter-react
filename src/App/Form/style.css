@@ -23,6 +23,7 @@
     border-radius: 8px;
     width: 150px;
     padding: 4px;
+    margin: 0 3px;
 }
 
 .form__field:hover {
@@ -48,8 +49,6 @@
     align-items: center;
     flex-wrap: wrap;
 }
-
-        
 
 .flex__item {
     padding: 0 5px;

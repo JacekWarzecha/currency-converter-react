@@ -13,11 +13,7 @@ export const Form = () => {
     setUsdPrice(target.value);
   };
 
-  let price = sharePrice * usdPrice;
-
-  if (price < 0) {
-    price = "tylko liczby dodatnie";
-  }
+  const price = sharePrice * usdPrice;
 
   return (
     <form className="form">
@@ -55,7 +51,9 @@ export const Form = () => {
         </div>
         <p className="form__paragraph form__paragraph--padding">
           Koszt jednej akcji wynosi:
-          <strong className="form__cost">{price.toFixed(2)}</strong>
+          <strong className="form__cost">
+            {price < 0 ? "Tylko liczby dodatnie" : price.toFixed(2)}
+          </strong>
         </p>
       </fieldset>
     </form>

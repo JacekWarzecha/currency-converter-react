@@ -6,11 +6,6 @@ import { Result } from "./Result";
 export const FormCantor = ({ calculateResult, result }) => {
   const [currency, setCurrency] = useState(currencies[0].short);
 
-  //tutaj natomiast zauważyłem, że niby uzyliśmy
-  //useState(currencies[0].short);
-  //ale i tak wyświetla się sugerowana pełna nazwa, zamiast skrót...
-  //można też nie pisać nic za "currencies[0]" i działało by dalej tak samo
-
   const [amount, setAmount] = useState("");
 
   const onFormSubmit = (event) => {

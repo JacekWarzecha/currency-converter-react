@@ -8,8 +8,6 @@ function App() {
 
   const calculateResult = (currency, amount) => {
     const rate = currencies.find(({ short }) => short === currency).rate;
-    //rozumiem, że poprostu szukamy waluty, która ma dany 'short'
-    //a short ten wział się z value=currency.short?
 
     setResult({
       sourceAmount: +amount,
