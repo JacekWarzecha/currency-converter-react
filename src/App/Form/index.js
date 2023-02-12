@@ -17,10 +17,6 @@ export const Form = () => {
 
   return (
     <form className="form">
-      <p>
-        Oblicz ile zapłacisz za jedną akcję w <strong>PLN</strong> w zależności
-        od kursu akcji oraz kursu USD
-      </p>
       <fieldset className="form__fieldset">
         <legend className="form__legend">Wprowadź parametry</legend>
         <div className="flex">

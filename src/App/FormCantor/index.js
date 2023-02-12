@@ -22,8 +22,10 @@ export const FormCantor = ({ calculateResult, result }) => {
   };
 
   return (
-    <form onSubmit={onFormSubmit}>
-      <p>Zamień swoje złotówki na wybraną walutę</p>
+    <form className="form" onSubmit={onFormSubmit}>
+      <p className="form__paragraph--font">
+        Zamień swoje złotówki na wybraną walutę
+      </p>
       <fieldset className="form__fieldset">
         <p>
           <label>

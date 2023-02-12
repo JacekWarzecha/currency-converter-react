@@ -40,3 +40,13 @@
     padding: 5px;
 }
 
+@media (max-width: 841px) {
+    .form__paragraph--font  {
+        color:#ffffff;
+    }
+}
+
+
+
+
+
