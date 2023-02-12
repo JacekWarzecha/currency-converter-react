@@ -10,7 +10,7 @@ Also you can convert polish zloty to another currencies.
 
 ## Webview:
 
-![WebView](webView.png)
+![WebView](webView2.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
