@@ -3,15 +3,22 @@ import { useState } from "react";
 import "./style.css";
 
 export const DateToday = () => {
-  const dateToday = new Date();
+  const dateImmediately = new Date().toLocaleDateString("pl", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric",
+  });
 
-  let [date1, setDate1] = useState("");
+  let [date1, setDate1] = useState(dateImmediately);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       setDate1(
         () =>
-          (date1 = dateToday.toLocaleDateString("pl", {
+          (date1 = new Date().toLocaleDateString("pl", {
             weekday: "long",
             day: "numeric",
             month: "long",
