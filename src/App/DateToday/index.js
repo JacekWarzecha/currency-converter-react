@@ -12,12 +12,12 @@ export const DateToday = () => {
     second: "numeric",
   });
 
-  let [date1, setDate1] = useState(dateImmediately);
+  const [date, setDate] = useState(dateImmediately);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setDate1(
-        () =>
+      setDate(
+        (date1) =>
           (date1 = new Date().toLocaleDateString("pl", {
             weekday: "long",
             day: "numeric",
@@ -36,7 +36,7 @@ export const DateToday = () => {
 
   return (
     <div className="dateToday">
-      <p className="dateToday__paragraph">Dzisiaj jest {date1}</p>
+      <p className="dateToday__paragraph">Dzisiaj jest {date}</p>
       <p>
         Oblicz koszt jednej akcji w <strong>PLN</strong> w zależności od kursów
         akcji i USD
