@@ -2,41 +2,32 @@ import { useEffect } from "react";
 import { useState } from "react";
 import "./style.css";
 
-export const DateToday = () => {
-  const dateImmediately = new Date().toLocaleDateString("pl", {
+const formatDate = (date) =>
+  date.toLocaleDateString(undefined, {
     weekday: "long",
     day: "numeric",
     month: "long",
-    hour: "numeric",
-    minute: "numeric",
-    second: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
   });
 
-  const [date, setDate] = useState(dateImmediately);
+export const DateToday = () => {
+  const [date, setDate] = useState(new Date());
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setDate(
-        (date1) =>
-          (date1 = new Date().toLocaleDateString("pl", {
-            weekday: "long",
-            day: "numeric",
-            month: "long",
-            hour: "numeric",
-            minute: "numeric",
-            second: "numeric",
-          }))
-      );
+      setDate(new Date());
     }, 1000);
 
     return () => {
       clearInterval(intervalId);
     };
-  });
+  }, []);
 
   return (
     <div className="dateToday">
-      <p className="dateToday__paragraph">Dzisiaj jest {date}</p>
+      <p className="dateToday__paragraph">Dzisiaj jest {formatDate(date)}</p>
       <p>
         Oblicz koszt jednej akcji w <strong>PLN</strong> w zależności od kursów
         akcji i USD
