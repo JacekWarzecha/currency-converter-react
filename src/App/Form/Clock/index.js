@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./style.css";
+import { StyledClock, Paragraph } from "./styled";
 
 const formatDate = (date) =>
   date.toLocaleDateString(undefined, {
@@ -25,12 +25,12 @@ export const Clock = () => {
   }, []);
 
   return (
-    <div className="dateToday">
-      <p className="dateToday__paragraph">Dzisiaj jest {formatDate(date)}</p>
+    <StyledClock>
+      <Paragraph>Dzisiaj jest {formatDate(date)}</Paragraph>
       <p>
         Oblicz koszt jednej akcji w <strong>PLN</strong> w zależności od kursów
         akcji i USD
       </p>
-    </div>
+    </StyledClock>
   );
 };
