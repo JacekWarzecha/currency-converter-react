@@ -1,5 +1,6 @@
 import "./style.css";
 import { useState } from "react";
+import { Clock } from "./Clock";
 
 export const Form = () => {
   const [sharePrice, setSharePrice] = useState("");
@@ -17,6 +18,7 @@ export const Form = () => {
 
   return (
     <form className="form">
+      <Clock />
       <fieldset className="form__fieldset">
         <legend className="form__legend">Wprowadź parametry</legend>
         <div className="flex">
