@@ -12,7 +12,7 @@ const formatDate = (date) =>
     second: "2-digit",
   });
 
-export const DateToday = () => {
+export const Clock = () => {
   const [date, setDate] = useState(new Date());
 
   useEffect(() => {
