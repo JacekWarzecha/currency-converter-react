@@ -27,19 +27,3 @@ export const Paragraph = styled.p`
   margin: 0;
   padding: 5px;
 `;
-
-/* .form__field {
-    border-radius: 8px;
-    width: 150px;
-    padding: 4px;
-    margin: 0 3px; - tu była różnica, że nie było 0 w marginie
-} */
-
-// .form__field:hover {
-//     background-color: hsl(55, 87%, 87%)
-// }
-
-// .form__field--width {
-//     width: 80px;
-//     border: 1px solid currentColor;
-// }
