@@ -4,6 +4,7 @@ export const FieldSet = styled.fieldset`
   background-color: rgb(244 232 97);
   border-radius: 8px;
   max-width: 550px;
+  border: none;
 `;
 
 export const Select = styled.select`

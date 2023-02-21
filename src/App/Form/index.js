@@ -1,4 +1,3 @@
-import "./style.css";
 import { useState } from "react";
 import { Clock } from "./Clock";
 import { Legend, Flex, FlexItem, Paragraph } from "./styled";
