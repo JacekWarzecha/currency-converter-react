@@ -36,12 +36,6 @@ export const Button = styled.button`
   }
 `;
 
-export const Paragraph = styled.p`
-  && {
-    margin: 0;
-  }
-`;
-
 export const FontColor = styled.p`
   @media (max-width: 841px) {
     color: #ffffff;

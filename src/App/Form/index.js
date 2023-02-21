@@ -1,6 +1,9 @@
 import "./style.css";
 import { useState } from "react";
 import { Clock } from "./Clock";
+import { Legend, Flex, FlexItem, Paragraph } from "./styled";
+import { FieldSet, Select } from "../FormCantor/styled";
+import { TargetAmount } from "../FormCantor/Result/styled";
 
 export const Form = () => {
   const [sharePrice, setSharePrice] = useState("");
@@ -17,43 +20,43 @@ export const Form = () => {
   const price = sharePrice * usdPrice;
 
   return (
-    <form className="form">
+    <form>
       <Clock />
-      <fieldset className="form__fieldset">
-        <legend className="form__legend">Wprowadź parametry</legend>
-        <div className="flex">
-          <p className="flex__item">
+      <FieldSet>
+        <Legend>Wprowadź parametry</Legend>
+        <Flex>
+          <FlexItem>
             <label>
               Kurs akcji:
-              <input
+              <Select
+                as="input"
                 value={sharePrice}
                 onChange={onSharePriceChange}
                 type="number"
-                className="form__field"
                 required
               />
             </label>
-          </p>
-          <p className="flex__item">
+          </FlexItem>
+          <FlexItem>
             <label>
               Kurs USD:
-              <input
+              <Select
+                as="input"
                 value={usdPrice}
                 onChange={onUsdPriceChange}
                 type="number"
-                className="form__field"
                 required
               />
             </label>
-          </p>
-        </div>
-        <p className="form__paragraph form__paragraph--padding">
+          </FlexItem>
+        </Flex>
+        <Paragraph>
           Koszt jednej akcji wynosi:
-          <strong className="form__cost">
+          <TargetAmount>
             {price < 0 ? "Tylko liczby dodatnie" : price.toFixed(2)}
-          </strong>
-        </p>
-      </fieldset>
+          </TargetAmount>
+        </Paragraph>
+      </FieldSet>
     </form>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { currencies } from "../currencies";
 import { Result } from "./Result";
-import { FieldSet, Select, Button, Paragraph, FontColor } from "./styled";
+import { FieldSet, Select, Button, FontColor } from "./styled";
 
 export const FormCantor = ({ calculateResult, result }) => {
   const [currency, setCurrency] = useState(currencies[0].short);
