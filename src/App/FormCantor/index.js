@@ -1,7 +1,7 @@
-import "./style.css";
 import React, { useState } from "react";
 import { currencies } from "../currencies";
 import { Result } from "./Result";
+import { FieldSet, Select, Button, Paragraph, FontColor } from "./styled";
 
 export const FormCantor = ({ calculateResult, result }) => {
   const [currency, setCurrency] = useState(currencies[0].short);
@@ -22,35 +22,29 @@ export const FormCantor = ({ calculateResult, result }) => {
   };
 
   return (
-    <form className="form" onSubmit={onFormSubmit}>
-      <p className="form__paragraph--font">
-        Zamień swoje złotówki na wybraną walutę
-      </p>
-      <fieldset className="form__fieldset">
+    <form onSubmit={onFormSubmit}>
+      <FontColor>Zamień swoje złotówki na wybraną walutę</FontColor>
+      <FieldSet>
         <p>
           <label>
             Wybierz walutę:
-            <select
-              value={currency}
-              onChange={onCurrencyChange}
-              className="form__field form__field--width"
-            >
+            <Select value={currency} onChange={onCurrencyChange} width="true">
               {currencies.map((currency) => (
                 <option key={currency.short} value={currency.short}>
                   {currency.name}
                 </option>
               ))}
-            </select>
+            </Select>
           </label>
         </p>
-        <p className="form__paragraph">
+        <p>
           <label>
             Wprowadź kwotę:
-            <input
+            <Select
+              as="input"
               value={amount}
               onChange={onAmountChange}
               type="number"
-              className="form__field"
               min="0.01"
               max="1000000000"
               step="any"
@@ -61,11 +55,11 @@ export const FormCantor = ({ calculateResult, result }) => {
         </p>
         <div>
           <p>
-            <button className="form__button">Oblicz</button>
+            <Button>Oblicz</Button>
           </p>
           <Result result={result} />
         </div>
-      </fieldset>
+      </FieldSet>
     </form>
   );
 };
