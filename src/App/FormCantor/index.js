@@ -28,7 +28,7 @@ export const FormCantor = ({ calculateResult, result }) => {
         <p>
           <label>
             Wybierz walutę:
-            <Select value={currency} onChange={onCurrencyChange} width="true">
+            <Select value={currency} onChange={onCurrencyChange} wider="true">
               {currencies.map((currency) => (
                 <option key={currency.short} value={currency.short}>
                   {currency.name}

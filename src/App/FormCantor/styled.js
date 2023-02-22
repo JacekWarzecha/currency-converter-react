@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 export const FieldSet = styled.fieldset`
-  background-color: rgb(244 232 97);
+  background-color: rgb(244 232 97 / 97%);
   border-radius: 8px;
   max-width: 550px;
   border: none;
@@ -13,8 +13,8 @@ export const Select = styled.select`
   padding: 4px;
   margin: 3px;
 
-  ${({ width }) =>
-    width &&
+  ${({ wider }) =>
+    wider &&
     css`
       width: 210px;
       border: 1px solid currentColor;
@@ -38,11 +38,5 @@ export const Button = styled.button`
 `;
 
 export const FontColor = styled.p`
-  @media (max-width: 841px) {
-    color: #ffffff;
-  }
+  color: #ffffff;
 `;
-
-// .form__paragraph--padding {
-//     padding: 5px;
-// }

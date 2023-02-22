@@ -10,4 +10,5 @@ export const TargetAmount = styled.strong`
   padding: 4px 10px;
   margin-left: 5px;
   margin-right: 5px;
+  background-color: rgb(244 232 97 / 93%);
 `;
