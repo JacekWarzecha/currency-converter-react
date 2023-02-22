@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { currencies } from "../currencies";
 import { Result } from "./Result";
-import { FieldSet, Select, Button, FontColor } from "./styled";
+import { FieldSet, Select, Button } from "./styled";
 
 export const FormCantor = ({ calculateResult, result }) => {
   const [currency, setCurrency] = useState(currencies[0].short);
@@ -23,7 +23,7 @@ export const FormCantor = ({ calculateResult, result }) => {
 
   return (
     <form onSubmit={onFormSubmit}>
-      <FontColor>Zamień swoje złotówki na wybraną walutę</FontColor>
+      <p>Zamień swoje złotówki na wybraną walutę</p>
       <FieldSet>
         <p>
           <label>

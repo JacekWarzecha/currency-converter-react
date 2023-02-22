@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import tloPomaranczowe from "./tloPomaranczowe.png";
+import cantor from "./cantor.jpg";
 
 export const GlobalStyle = createGlobalStyle`
 html {
@@ -17,7 +17,7 @@ html {
   font-size: 20px;
   margin: 0 auto;
   padding: 10px 25px 40px 25px;
-  background-image: url("${tloPomaranczowe}");
+  background-image: url("${cantor}");
   overflow: auto;
   background-size: cover;
   background-position: center;

@@ -18,8 +18,8 @@ export const Clock = () => {
     <StyledClock>
       <Paragraph>Dzisiaj jest {formatDate(date)}</Paragraph>
       <p>
-        Oblicz koszt jednej akcji w <strong>PLN</strong> w zależności od kursów
-        akcji i USD
+        Oblicz koszt akcji w <strong>PLN</strong> w zależności od kursów akcji i
+        USD
       </p>
     </StyledClock>
   );

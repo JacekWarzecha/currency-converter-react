@@ -3,6 +3,7 @@ import { Form } from "./Form";
 import { FormCantor } from "./FormCantor";
 import { currencies } from "./currencies";
 import { GlobalStyle } from "../GlobalStyle";
+import { Container } from "./Container";
 
 function App() {
   const [result, setResult] = useState();
@@ -18,11 +19,11 @@ function App() {
   };
 
   return (
-    <div>
+    <Container>
       <GlobalStyle />
       <Form />
       <FormCantor result={result} calculateResult={calculateResult} />
-    </div>
+    </Container>
   );
 }
 
