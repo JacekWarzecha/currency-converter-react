@@ -21,18 +21,18 @@ export const Select = styled.select`
     `}
 
   &:hover {
-    background-color: hsl(55, 87%, 87%);
+    background-color: rgb(209 208 197 / 55%);
   }
 `;
 
 export const Button = styled.button`
-  background-color: rgb(221 220 207 / 93%);
+  background-color: rgb(209 208 197 / 32%);
   border: 1px solid currentColor;
   border-radius: 8px;
   padding: 5px;
   width: 100%;
 
   &&:hover {
-    background-color: hsl(55, 87%, 77%);
+    background-color: rgb(209 208 197 / 75%);
   }
 `;
