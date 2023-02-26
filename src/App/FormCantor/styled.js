@@ -1,7 +1,11 @@
 import styled, { css } from "styled-components";
 
+export const theme = {
+  background: "rgb(209 208 197 / 32%)",
+};
+
 export const FieldSet = styled.fieldset`
-  background-color: rgb(209 208 197 / 32%);
+  background-color: ${({ theme }) => theme.background};
   border-radius: 8px;
   max-width: 550px;
   border: none;
@@ -26,7 +30,7 @@ export const Select = styled.select`
 `;
 
 export const Button = styled.button`
-  background-color: rgb(209 208 197 / 32%);
+  background-color: rgb(209 208 197);
   border: 1px solid currentColor;
   border-radius: 8px;
   padding: 5px;

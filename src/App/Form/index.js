@@ -3,6 +3,8 @@ import { Clock } from "./Clock";
 import { Legend, Flex, FlexItem, Paragraph } from "./styled";
 import { FieldSet, Select } from "../FormCantor/styled";
 import { TargetAmount } from "../FormCantor/Result/styled";
+import { theme } from "../FormCantor/styled";
+import { ThemeProvider } from "styled-components";
 
 export const Form = () => {
   const [sharePrice, setSharePrice] = useState("");
@@ -19,43 +21,45 @@ export const Form = () => {
   const price = sharePrice * usdPrice;
 
   return (
-    <form>
-      <Clock />
-      <FieldSet>
-        <Legend>Wprowadź parametry</Legend>
-        <Flex>
-          <FlexItem>
-            <label>
-              Kurs akcji:
-              <Select
-                as="input"
-                value={sharePrice}
-                onChange={onSharePriceChange}
-                type="number"
-                required
-              />
-            </label>
-          </FlexItem>
-          <FlexItem>
-            <label>
-              Kurs USD:
-              <Select
-                as="input"
-                value={usdPrice}
-                onChange={onUsdPriceChange}
-                type="number"
-                required
-              />
-            </label>
-          </FlexItem>
-        </Flex>
-        <Paragraph>
-          Koszt jednej akcji wynosi:
-          <TargetAmount>
-            {price < 0 ? "Tylko liczby dodatnie" : price.toFixed(2)}
-          </TargetAmount>
-        </Paragraph>
-      </FieldSet>
-    </form>
+    <ThemeProvider theme={theme}>
+      <form>
+        <Clock />
+        <FieldSet>
+          <Legend>Wprowadź parametry</Legend>
+          <Flex>
+            <FlexItem>
+              <label>
+                Kurs akcji:
+                <Select
+                  as="input"
+                  value={sharePrice}
+                  onChange={onSharePriceChange}
+                  type="number"
+                  required
+                />
+              </label>
+            </FlexItem>
+            <FlexItem>
+              <label>
+                Kurs USD:
+                <Select
+                  as="input"
+                  value={usdPrice}
+                  onChange={onUsdPriceChange}
+                  type="number"
+                  required
+                />
+              </label>
+            </FlexItem>
+          </Flex>
+          <Paragraph>
+            Koszt jednej akcji wynosi:
+            <TargetAmount>
+              {price < 0 ? "Tylko liczby dodatnie" : price.toFixed(2)}
+            </TargetAmount>
+          </Paragraph>
+        </FieldSet>
+      </form>
+    </ThemeProvider>
   );
 };

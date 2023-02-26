@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { currencies } from "../currencies";
 import { Result } from "./Result";
-import { FieldSet, Select, Button } from "./styled";
+import { FieldSet, Select, Button, theme } from "./styled";
+import { ThemeProvider } from "styled-components";
 
 export const FormCantor = ({ calculateResult, result }) => {
   const [currency, setCurrency] = useState(currencies[0].short);
@@ -22,44 +23,46 @@ export const FormCantor = ({ calculateResult, result }) => {
   };
 
   return (
-    <form onSubmit={onFormSubmit}>
-      <p>Zamień swoje złotówki na wybraną walutę</p>
-      <FieldSet>
-        <p>
-          <label>
-            Wybierz walutę:
-            <Select value={currency} onChange={onCurrencyChange} wider="true">
-              {currencies.map((currency) => (
-                <option key={currency.short} value={currency.short}>
-                  {currency.name}
-                </option>
-              ))}
-            </Select>
-          </label>
-        </p>
-        <p>
-          <label>
-            Wprowadź kwotę:
-            <Select
-              as="input"
-              value={amount}
-              onChange={onAmountChange}
-              type="number"
-              min="0.01"
-              max="1000000000"
-              step="any"
-              required
-            />
-          </label>
-          PLN
-        </p>
-        <div>
+    <ThemeProvider theme={theme}>
+      <form onSubmit={onFormSubmit}>
+        <p>Zamień swoje złotówki na wybraną walutę</p>
+        <FieldSet>
           <p>
-            <Button>Oblicz</Button>
+            <label>
+              Wybierz walutę:
+              <Select value={currency} onChange={onCurrencyChange} wider="true">
+                {currencies.map((currency) => (
+                  <option key={currency.short} value={currency.short}>
+                    {currency.name}
+                  </option>
+                ))}
+              </Select>
+            </label>
           </p>
-          <Result result={result} />
-        </div>
-      </FieldSet>
-    </form>
+          <p>
+            <label>
+              Wprowadź kwotę:
+              <Select
+                as="input"
+                value={amount}
+                onChange={onAmountChange}
+                type="number"
+                min="0.01"
+                max="1000000000"
+                step="any"
+                required
+              />
+            </label>
+            PLN
+          </p>
+          <div>
+            <p>
+              <Button>Oblicz</Button>
+            </p>
+            <Result result={result} />
+          </div>
+        </FieldSet>
+      </form>
+    </ThemeProvider>
   );
 };
