@@ -18,7 +18,7 @@ export const FlexItem = styled.p`
   /* padding: 0 5px; */
   flex-basis: 50%;
 
-  @media (max-width: 767px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     margin: 5px 0;
   }
 `;

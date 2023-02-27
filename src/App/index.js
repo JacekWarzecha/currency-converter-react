@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Form } from "./Form";
 import { FormCantor } from "./FormCantor";
 import { currencies } from "./currencies";
-import { GlobalStyle } from "../GlobalStyle";
 import { Container } from "./Container";
 
 function App() {
@@ -20,7 +19,6 @@ function App() {
 
   return (
     <Container>
-      <GlobalStyle />
       <Form />
       <FormCantor result={result} calculateResult={calculateResult} />
     </Container>

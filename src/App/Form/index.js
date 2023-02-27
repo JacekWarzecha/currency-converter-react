@@ -3,7 +3,7 @@ import { Clock } from "./Clock";
 import { Legend, Flex, FlexItem, Paragraph } from "./styled";
 import { FieldSet, Select } from "../FormCantor/styled";
 import { TargetAmount } from "../FormCantor/Result/styled";
-import { theme } from "../FormCantor/styled";
+import { theme } from "../../theme";
 import { ThemeProvider } from "styled-components";
 
 export const Form = () => {

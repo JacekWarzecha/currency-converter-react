@@ -1,11 +1,5 @@
 import styled, { css } from "styled-components";
 
-export const theme = {
-  background: {
-    primaryColor: "rgb(209 208 197 / 32%)",
-  },
-};
-
 export const FieldSet = styled.fieldset`
   background-color: ${({ theme }) => theme.background.primaryColor};
   border-radius: 8px;
