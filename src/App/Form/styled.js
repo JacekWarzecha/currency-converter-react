@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Legend = styled.legend`
   border: 1px solid currentColor;
   border-radius: 8px;
-  background-color: rgb(221 220 207 / 93%);
+  background: ${({ theme }) => theme.color.interactiveAreas};
   padding: 5px;
 `;
 
@@ -15,7 +15,6 @@ export const Flex = styled.div`
 `;
 
 export const FlexItem = styled.p`
-  /* padding: 0 5px; */
   flex-basis: 50%;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
@@ -25,5 +24,4 @@ export const FlexItem = styled.p`
 
 export const Paragraph = styled.p`
   margin: 0;
-  padding: 5px;
 `;
