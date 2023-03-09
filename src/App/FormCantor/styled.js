@@ -16,7 +16,7 @@ export const Select = styled.select`
   ${({ wider }) =>
     wider &&
     css`
-      width: 210px;
+      width: 166px;
       border: 1px solid currentColor;
     `}
 
@@ -43,4 +43,19 @@ export const Button = styled.button`
   &:active {
     filter: brightness(80%);
   }
+`;
+
+export const Loading = styled.p`
+  color: green;
+`;
+
+export const Failure = styled.p`
+  color: red;
+`;
+
+export const Info = styled.p`
+  text-align: center;
+  font-size: 14px;
+  font-family: "Roboto Mono", sans-serif;
+  color: ${({ theme }) => theme.color.doveGray};
 `;
